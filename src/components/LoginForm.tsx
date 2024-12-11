@@ -1,17 +1,15 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { validateLogin } from "../utils/validate"
-// import image3 from '../assets/image3.webp';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { login } from '../slices/userSlice';
+import { useNavigate } from 'react-router-dom';
+import { validateLogin } from '../utils/validate';
 
-interface LoginFormProps {
-  onLoginSuccess: () => void;
-}
+const LoginForm: React.FC = () => {
+  const [username, setUsername] = useState<string>('');
+  const [password, setPassword] = useState<string>('');
+  const [errorMessage, setErrorMessage] = useState<string>('');
 
-const LoginForm: React.FC<LoginFormProps> = ({ onLoginSuccess }) => {
-  const [username, setUsername] = useState<string>("");
-  const [password, setPassword] = useState<string>("");
-  const [errorMessage, setErrorMessage] = useState<string>("");
-
+  const dispatch = useDispatch();  // Use dispatch to call redux actions
   const navigate = useNavigate();
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -20,10 +18,8 @@ const LoginForm: React.FC<LoginFormProps> = ({ onLoginSuccess }) => {
     // Validate form inputs
     const validationResult = validateLogin(username, password);
     if (validationResult.isValid) {
-      // Proceed with login
-      console.log("Login Successful!");
-      onLoginSuccess();
-      navigate("/dashboard"); // Redirect to a different page (e.g., Dashboard)
+      dispatch(login(username));  // Dispatch the login action
+      navigate('/dashboard');  // Redirect to dashboard after successful login
     } else {
       setErrorMessage(validationResult.message);
     }
