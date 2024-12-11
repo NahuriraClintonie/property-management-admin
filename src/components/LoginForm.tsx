@@ -28,41 +28,29 @@ const LoginForm: React.FC<LoginFormProps> = ({ onLoginSuccess }) => {
   };
 
   return (
-    <div className="max-w-md mx-auto p-4 bg-white shadow-lg rounded-lg">
-      <h2 className="text-2xl font-bold text-center mb-4">Login</h2>
-      {errorMessage && <div className="text-red-600 text-center mb-4">{errorMessage}</div>}
+    <div className="max-w-3xl mx-auto p-8 bg-white shadow-lg rounded-lg">
+      <h2 className="text-4xl font-bold text-center mb-6">Login</h2>
+      {errorMessage && <div className="text-red-600 text-center mb-6">{errorMessage}</div>}
       <form onSubmit={handleSubmit}>
-        <div className="mb-4">
-          <label htmlFor="username" className="block text-sm font-medium text-gray-700">
-            Username
+        <div className="mb-6">
+          <label
+            htmlFor="username" className="block text-lg font-medium text-gray-700">Username
           </label>
           <input
-            type="text"
-            id="username"
-            value={username}
+            type="text" id="username" value={username}
             onChange={(e) => setUsername(e.target.value)}
-            className="w-full p-2 border border-gray-300 rounded-lg mt-2"
-            required
-          />
+            className="w-full p-4 border border-gray-300 rounded-lg mt-2 text-lg" required />
         </div>
-        <div className="mb-4">
-          <label htmlFor="password" className="block text-sm font-medium text-gray-700">
-            Password
+        <div className="mb-6">
+          <label
+            htmlFor="password" className="block text-lg font-medium text-gray-700">Password
           </label>
-          <input
-            type="password"
-            id="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            className="w-full p-2 border border-gray-300 rounded-lg mt-2"
-            required
-          />
+          <input type="password" id="password"
+            value={password} onChange={(e) => setPassword(e.target.value)}
+            className="w-full p-4 border border-gray-300 rounded-lg mt-2 text-lg" required />
         </div>
         <button
-          type="submit"
-          className="w-full bg-blue-600 text-white py-2 rounded-lg"
-        >
-          Login
+          type="submit" className="w-full bg-blue-600 text-white py-4 rounded-lg text-lg">Login
         </button>
       </form>
     </div>
