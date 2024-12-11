@@ -1,18 +1,7 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import LoginPage from './pages/LoginPage';
-
-const App: React.FC = () => {
+export default function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<LoginPage />} />
-        {/* Add routes for Register and Forgot Password */}
-        <Route path="/register" element={<div>Register Page</div>} />
-        <Route path="/forgot-password" element={<div>Forgot Password Page</div>} />
-      </Routes>
-    </Router>
+    <div className="flex justify-center items-center h-screen bg-blue-500 text-white text-4xl">
+      Hello, Tailwind with Vite!
+    </div>
   );
-};
-
-export default App;
+}
