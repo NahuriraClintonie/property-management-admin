@@ -1,7 +1,17 @@
-export default function App() {
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import LoginPage from "./pages/LoginPage";
+
+const App: React.FC = () => {
   return (
-    <div className="flex justify-center items-center h-screen bg-blue-500 text-white text-4xl">
-      Hello, Tailwind with Vite!
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/login" element={<LoginPage />} />
+      </Routes>
+    </Router>
   );
-}
+};
+
+export default App;
