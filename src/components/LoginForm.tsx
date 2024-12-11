@@ -29,7 +29,7 @@ const LoginForm: React.FC = () => {
     <div className="flex justify-center items-center min-h-screen">
       <div className="bg-white shadow-lg rounded-lg p-8 max-w-2xl w-full">
         {/* Logo Section */}
-        <div className="text-center">
+        <div className="text-center mb-4">
           {/*<img*/}
           {/*  src={image3}*/}
           {/*  alt="System Logo"*/}
@@ -40,7 +40,7 @@ const LoginForm: React.FC = () => {
         </div>
 
         {/* Form Section */}
-        <div className="bg-white rounded-lg p-4">
+        <div className="bg-white rounded-lg p-8">
           {errorMessage && (
             <div className="text-red-600 text-center mb-4">{errorMessage}</div>
           )}
