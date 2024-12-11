@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { validateLogin } from "../utils/validate"
+// import image3 from '../assets/image3.webp';
+
 interface LoginFormProps {
   onLoginSuccess: () => void;
 }
@@ -31,18 +33,18 @@ const LoginForm: React.FC<LoginFormProps> = ({ onLoginSuccess }) => {
     <div className="flex justify-center items-center min-h-screen">
       <div className="bg-white shadow-lg rounded-lg p-8 max-w-2xl w-full">
         {/* Logo Section */}
-        <div className="text-center mb-6">
-          <img
-            src="../assets/image3.webp"
-            alt="System Logo"
-            className="mx-auto mb-4 w-24 h-24"
-          />
+        <div className="text-center">
+          {/*<img*/}
+          {/*  src={image3}*/}
+          {/*  alt="System Logo"*/}
+          {/*  className="mx-auto mb-4 w-24 h-24"*/}
+          {/*/>*/}
           <h1 className="text-3xl font-bold">Property Management System</h1>
           <p className="text-lg text-gray-500">Administrator Panel</p>
         </div>
 
         {/* Form Section */}
-        <div className="bg-white rounded-lg p-8">
+        <div className="bg-white rounded-lg p-4">
           {errorMessage && (
             <div className="text-red-600 text-center mb-4">{errorMessage}</div>
           )}
