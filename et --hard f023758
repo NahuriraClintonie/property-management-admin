@@ -1,0 +1,86 @@
+[33m6deba4a[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mUI-enhancement[m[33m)[m HEAD@{0}: rebase (finish): returning to refs/heads/UI-enhancement
+[33m6deba4a[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mUI-enhancement[m[33m)[m HEAD@{1}: rebase (continue): updated nonpayment ui
+[33m1d8a7c5[m HEAD@{2}: rebase (continue): ..
+[33mf81a880[m HEAD@{3}: rebase (continue): updated nonpayment ui
+[33mec92584[m HEAD@{4}: rebase (continue): ..
+[33m78385bc[m HEAD@{5}: rebase (pick): integrating non-payment with backend
+[33mf023758[m HEAD@{6}: rebase (pick): integrating non-payment with backend
+[33md588606[m HEAD@{7}: rebase (pick): updated nonpayment ui
+[33m7a0638b[m HEAD@{8}: rebase (pick): ..
+[33m3599b17[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmaster[m[33m)[m HEAD@{9}: rebase (start): checkout master
+[33m79a9f31[m[33m ([m[1;31morigin/UI-enhancement[m[33m)[m HEAD@{10}: checkout: moving from master to UI-enhancement
+[33m3599b17[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmaster[m[33m)[m HEAD@{11}: pull --tags origin master: Fast-forward
+[33m48b7716[m HEAD@{12}: checkout: moving from UI-enhancement to master
+[33m79a9f31[m[33m ([m[1;31morigin/UI-enhancement[m[33m)[m HEAD@{13}: commit (merge): Merge branch 'UI-enhancement' of https://github.com/aibos-africa/Aibos_Water_Billing_System_UI into UI-enhancement
+[33ma4e0c97[m HEAD@{14}: commit: integrating non-payment with backend
+[33m70fcf19[m HEAD@{15}: pull origin master: Merge made by the 'ort' strategy.
+[33mce193ab[m HEAD@{16}: commit: integrating non-payment with backend
+[33m42df19f[m HEAD@{17}: commit (merge): new changes
+[33mbbb5ade[m HEAD@{18}: checkout: moving from master to UI-enhancement
+[33m48b7716[m HEAD@{19}: checkout: moving from UI-enhancement to master
+[33mbbb5ade[m HEAD@{20}: rebase (finish): returning to refs/heads/UI-enhancement
+[33mbbb5ade[m HEAD@{21}: rebase (pick): updated nonpayment ui
+[33m8f6c1ae[m HEAD@{22}: rebase (pick): chore: Remove unused code and comments in FeeAdjustmentPage.tsx
+[33mae5827f[m HEAD@{23}: rebase (pick): ..
+[33m48b7716[m HEAD@{24}: rebase (start): checkout master
+[33m01482b6[m HEAD@{25}: commit: updated nonpayment ui
+[33m5c2cb34[m HEAD@{26}: pull origin master: Merge made by the 'ort' strategy.
+[33m43086b8[m HEAD@{27}: checkout: moving from master to UI-enhancement
+[33m48b7716[m HEAD@{28}: pull origin master: Fast-forward
+[33m88ed3f0[m HEAD@{29}: checkout: moving from UI-enhancement to master
+[33m43086b8[m HEAD@{30}: commit: ..
+[33m6e86015[m HEAD@{31}: commit: updated ui
+[33m951a0d9[m HEAD@{32}: commit: ui enhancement
+[33m88ed3f0[m HEAD@{33}: checkout: moving from master to UI-enhancement
+[33m88ed3f0[m HEAD@{34}: checkout: moving from non-payment to master
+[33m40ae681[m[33m ([m[1;32mnon-payment[m[33m)[m HEAD@{35}: commit: non-payment
+[33mfffec2c[m HEAD@{36}: checkout: moving from non-payment to non-payment
+[33mfffec2c[m HEAD@{37}: checkout: moving from non-payment to non-payment
+[33mfffec2c[m HEAD@{38}: checkout: moving from non-payment to non-payment
+[33mfffec2c[m HEAD@{39}: rebase (finish): returning to refs/heads/non-payment
+[33mfffec2c[m HEAD@{40}: rebase (pick): updated
+[33m696532f[m HEAD@{41}: rebase (continue): enhanched customer list table with sicky header,navigation fix and scrolling
+[33m15eafce[m HEAD@{42}: rebase (start): checkout master
+[33m88ae543[m HEAD@{43}: checkout: moving from non-payment to non-payment
+[33m88ae543[m HEAD@{44}: checkout: moving from master to non-payment
+[33m88ed3f0[m HEAD@{45}: checkout: moving from non-payment to master
+[33m88ae543[m HEAD@{46}: commit: updated
+[33m32617b9[m[33m ([m[1;31morigin/non-payment[m[33m)[m HEAD@{47}: checkout: moving from non-payment to non-payment
+[33m32617b9[m[33m ([m[1;31morigin/non-payment[m[33m)[m HEAD@{48}: commit (merge): Merge branch 'non-payment' of https://github.com/aibos-africa/Aibos_Water_Billing_System_UI into non-payment
+[33m15eafce[m HEAD@{49}: rebase (finish): returning to refs/heads/non-payment
+[33m15eafce[m HEAD@{50}: rebase (continue): enhanched customer list table with sicky header,navigation fix and scrolling
+[33m88ed3f0[m HEAD@{51}: rebase (start): checkout master
+[33me4682fe[m HEAD@{52}: checkout: moving from master to non-payment
+[33m88ed3f0[m HEAD@{53}: pull origin master: Fast-forward
+[33m2f24665[m HEAD@{54}: checkout: moving from non-payment to master
+[33me4682fe[m HEAD@{55}: commit: enhanched customer list table with sicky header,navigation fix and scrolling
+[33m72aaeab[m HEAD@{56}: pull origin master: Fast-forward
+[33m17271a9[m HEAD@{57}: pull origin master: Fast-forward
+[33m167e724[m HEAD@{58}: pull origin master: Merge made by the 'ort' strategy.
+[33m34ea98e[m HEAD@{59}: commit: addressed the comments
+[33m6b4de5c[m HEAD@{60}: checkout: moving from non-payment to non-payment
+[33m6b4de5c[m HEAD@{61}: commit: addressed the comment
+[33m42030cb[m HEAD@{62}: checkout: moving from non-payment to non-payment
+[33m42030cb[m HEAD@{63}: checkout: moving from non-payment to non-payment
+[33m42030cb[m HEAD@{64}: commit: updated send notice on fee adjustment
+[33m9057794[m HEAD@{65}: checkout: moving from master to non-payment
+[33m2f24665[m HEAD@{66}: pull origin master: Fast-forward
+[33mca17db3[m HEAD@{67}: checkout: moving from non-payment to master
+[33m9057794[m HEAD@{68}: commit: send notice button
+[33m2f24665[m HEAD@{69}: pull origin master: Fast-forward
+[33m0b8b563[m HEAD@{70}: commit: adjust fee button
+[33m35d02a8[m HEAD@{71}: pull origin master: Fast-forward
+[33meaac4bd[m HEAD@{72}: commit: updated non-payment
+[33mca17db3[m HEAD@{73}: checkout: moving from master to non-payment
+[33mca17db3[m HEAD@{74}: merge non-payment: Fast-forward
+[33mb59cd3e[m HEAD@{75}: checkout: moving from non-payment to master
+[33mca17db3[m HEAD@{76}: commit: updated nonpayment table and page
+[33m3570d45[m HEAD@{77}: rebase (finish): returning to refs/heads/non-payment
+[33m3570d45[m HEAD@{78}: rebase (continue): non-payment
+[33mb59cd3e[m HEAD@{79}: rebase (start): checkout master
+[33m4898c1b[m HEAD@{80}: checkout: moving from master to non-payment
+[33mb59cd3e[m HEAD@{81}: pull: Fast-forward
+[33mbbec907[m HEAD@{82}: checkout: moving from non-payment to master
+[33m4898c1b[m HEAD@{83}: commit: non-payment
+[33mbbec907[m HEAD@{84}: checkout: moving from master to non-payment
+[33mbbec907[m HEAD@{85}: clone: from https://github.com/aibos-africa/Aibos_Water_Billing_System_UI.git
