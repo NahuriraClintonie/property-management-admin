@@ -48,9 +48,6 @@ const LoginPage: React.FC = () => {
           <span className="text-[#0077B6] text-4xl mt-5 font-extrabold">
             Admin Panel
           </span>
-          <span className="text-black text-2xl mt-5 font-bold">
-            Property Management System
-          </span>
         </h1>
         <form
           className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"

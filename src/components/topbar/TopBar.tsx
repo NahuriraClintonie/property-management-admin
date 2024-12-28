@@ -49,9 +49,9 @@ const TopBar: React.FC = () => {
   return (
     <div className="flex items-center justify-between bg-[#CAF0F8] p-4 shadow-sm">
       <div className="text-[#0077B6] font-bold text-base md:text-xl flex flex-col ml-16 lg:ml-8">
-        <span className="whitespace-nowrap">AIBOS WATER</span>
+        <span className="whitespace-nowrap">PROPERTY MANAGEMENT</span>
         <span className="text-black text-xs md:text-sm ml-2">
-          BILLING SYSTEM
+          SYSTEM
         </span>
       </div>
 

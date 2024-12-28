@@ -17,16 +17,27 @@ interface ErrorResponse {
 }
 
 export const getLoggedInUser = async (
-  credentials: LoginCredentials
+    credentials: LoginCredentials
 ): Promise<LoginResponse | ErrorResponse> => {
+  const hardcodedUsername = "admin";
+  const hardcodedPassword = "12345";
 
-  try {
-    const response = await BaseAPIHelper("POST", `/users/login/`, credentials);
-    return response;
-  } catch (e) {
-    return { detail: "An error occurred" };
+  // Simulate login verification
+  if (
+      credentials.username === hardcodedUsername &&
+      credentials.password === hardcodedPassword
+  ) {
+    return {
+      access: "fakeAccessToken",
+      refresh: "fakeRefreshToken",
+      user_id: 1,
+      email: "admin@example.com",
+    };
   }
+
+  return { detail: "Invalid username or password" };
 };
+
 
 export const getPasswordResetLink = async (
   email: string
@@ -37,6 +48,6 @@ export const getPasswordResetLink = async (
     });
     return response;
   } catch (e) {
-    return "An error occurred";
+    return "An error occurred: "+e;
   }
 };
