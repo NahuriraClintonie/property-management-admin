@@ -8,6 +8,7 @@ import {
 import LoginPage from "./pages/LoginPage";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import DashboardPage from "./pages/DashboardPage.tsx";
 
 const App: React.FC = () => {
     return (
@@ -17,7 +18,7 @@ const App: React.FC = () => {
                 <Route path="" element={<AuthRedirect />} />
                 <Route path="/login" element={<LoginPage />} />
                 <Route path="/forgot-password" element={<LoginPage />} />
-                <Route path="/email-sent" element={<LoginPage />} />
+                <Route path="/dashboard" element={<DashboardPage />} />
             </Routes>
         </Router>
     );

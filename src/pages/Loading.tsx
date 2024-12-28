@@ -9,8 +9,7 @@ const Loading = () => {
           <span
             key={index}
             className={`inline-block animate-pulse uppercase text-[#1A202C] font-bold text-2xl`}
-            style={{ animationDelay: `${index * 0.1}s` }}
-          >
+            style={{ animationDelay: `${index * 0.1}s` }}>
             {letter}
           </span>
         ))}

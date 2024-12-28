@@ -58,13 +58,11 @@ const TopBar: React.FC = () => {
       <div className="relative flex items-center space-x-2 md:space-x-4">
         <div
           className="flex items-center space-x-2 cursor-pointer"
-          onClick={toggleDropdown}
-        >
+          onClick={toggleDropdown}>
           <img
             src="/images/user.png"
             alt="User avatar"
-            className="w-8 h-8 md:w-10 md:h-10 rounded-full"
-          />
+            className="w-8 h-8 md:w-10 md:h-10 rounded-full"/>
           <span className="hidden md:inline text-black font-semibold">
             {username}
           </span>
@@ -73,8 +71,7 @@ const TopBar: React.FC = () => {
               isDropdownOpen ? "rotate-180" : "rotate-0"
             }`}
             xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-          >
+            viewBox="0 0 20 20">
             <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
           </svg>
         </div>
@@ -83,8 +80,7 @@ const TopBar: React.FC = () => {
           <div className="absolute top-12 md:top-16 right-0 bg-white border rounded-lg shadow-lg z-50 p-2 w-40">
             <button
               onClick={handleLogout}
-              className="block w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-gray-100 rounded"
-            >
+              className="block w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-gray-100 rounded">
               Logout
             </button>
           </div>
