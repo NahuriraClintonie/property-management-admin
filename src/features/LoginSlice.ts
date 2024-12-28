@@ -1,12 +1,13 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { getLoggedInUser, LoginCredentials,getPasswordResetLink} from "../api/LoginAPI";
+import { getLoggedInUser, LoginCredentials, getPasswordResetLink } from "../api/LoginAPI";
 
 interface LoginResponse {
     access: string;
     refresh: string;
-    user_id: number; 
-    email: string; 
-  }
+    user_id: number;
+    email: string;
+}
+
 interface LoginState {
     loading: boolean;
     loggedUser: LoginResponse | null;
@@ -19,31 +20,32 @@ const initialState: LoginState = {
     error: "",
 };
 
+// Login user action
 export const loginUser = createAsyncThunk(
     "Login/login",
-    async (credentials: LoginCredentials): Promise<LoginResponse> => {
+    async (credentials: LoginCredentials, { rejectWithValue }) => {
         const response = await getLoggedInUser(credentials);
-        if (response && 'access' in response && 'refresh' in response && 'user_id' in response && 'email' in response) {
-            return response as LoginResponse;
+        if ("access" in response) {
+            return response;
         }
-        return {
-            access: "",
-            refresh: "",
-            user_id: 0,
-            email: "",
-        };
+        return rejectWithValue(response.detail);
     }
 );
 
+// Forgot password action
 export const forgotPassword = createAsyncThunk(
     "Login/forgotPassword",
-    async (credentials: string) => {
-        const response = await getPasswordResetLink(credentials);
-        return response;    
+    async (email: string, { rejectWithValue }) => {
+        const response = await getPasswordResetLink(email);
+        if (typeof response === "string" && response.startsWith("An error occurred")) {
+            return rejectWithValue(response);
+        }
+        return response;
     }
 );
 
- const loginSlice = createSlice({
+// Login slice
+const loginSlice = createSlice({
     name: "Login",
     initialState,
     reducers: {},
@@ -54,13 +56,13 @@ export const forgotPassword = createAsyncThunk(
             })
             .addCase(loginUser.fulfilled, (state, action) => {
                 state.loading = false;
-                state.loggedUser = action.payload;
+                state.loggedUser = action.payload as LoginResponse;
                 state.error = "";
             })
             .addCase(loginUser.rejected, (state, action) => {
                 state.loading = false;
                 state.loggedUser = null;
-                state.error = action.error.message || "An unknown error occurred";
+                state.error = action.payload as string;
             })
             .addCase(forgotPassword.pending, (state) => {
                 state.loading = true;
@@ -70,7 +72,7 @@ export const forgotPassword = createAsyncThunk(
             })
             .addCase(forgotPassword.rejected, (state, action) => {
                 state.loading = false;
-                state.error = action.error.message || "An unknown error occurred";
+                state.error = action.payload as string;
             });
     },
 });

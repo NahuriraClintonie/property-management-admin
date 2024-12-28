@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useAppSelector } from "../../store/Store";
 
 const TopBar: React.FC = () => {
   const navigate = useNavigate();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-  // Hardcoded username for now
-  const username = "JohnDoe";
+  // Access username from Redux store
+  const loggedUser = useAppSelector((state) => state.Login.loggedUser);
+  const username = loggedUser?.email || "Admin";
 
   const handleLogout = () => {
-    // Clear any session data and navigate to login page
     localStorage.clear();
     navigate("/login");
   };
@@ -19,11 +20,11 @@ const TopBar: React.FC = () => {
   };
 
   return (
-      <div className="flex items-center justify-between bg-[#CAF0F8] p-4 shadow-sm">
+      <div className="flex items-center justify-between bg-[#0077B6] p-4 shadow-sm">
         {/* Brand Name */}
-        <div className="text-[#0077B6] font-bold text-base md:text-xl flex flex-col ml-16 lg:ml-8">
+        <div className="text-white font-bold text-base md:text-xl flex flex-col ml-16 lg:ml-8">
           <span className="whitespace-nowrap">PROPERTY MANAGEMENT</span>
-          <span className="text-black text-xs md:text-sm ml-2">SYSTEM</span>
+          <span className="text-white text-xs md:text-sm ml-2">SYSTEM</span>
         </div>
 
         {/* User Dropdown */}
@@ -39,12 +40,12 @@ const TopBar: React.FC = () => {
                 className="w-8 h-8 md:w-10 md:h-10 rounded-full"
             />
             {/* Username */}
-            <span className="hidden md:inline text-black font-semibold">
+            <span className="hidden md:inline text-white font-semibold">
             {username}
           </span>
             {/* Dropdown Icon */}
             <svg
-                className={`fill-current h-4 w-4 text-gray-700 transform ${
+                className={`fill-current h-4 w-4 text-white transform ${
                     isDropdownOpen ? "rotate-180" : "rotate-0"
                 }`}
                 xmlns="http://www.w3.org/2000/svg"
