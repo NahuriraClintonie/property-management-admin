@@ -24,7 +24,6 @@ const TopBar: React.FC = () => {
         {/* Brand Name */}
         <div className="text-white font-bold text-base md:text-xl flex flex-col ml-16 lg:ml-8">
           <span className="whitespace-nowrap">PROPERTY MANAGEMENT</span>
-          <span className="text-white text-xs md:text-sm ml-2">Property Manager</span>
         </div>
 
         {/* User Dropdown */}
