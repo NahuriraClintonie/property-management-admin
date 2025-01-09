@@ -8,27 +8,12 @@ const Dashboard: React.FC = () => {
 
     // Example data
     const activities = [
-        {
-            id: '1',
-            name: 'John Doe',
-            status: 'Successful',
-            room: 'Room 101',
-            timestamp: '2024-01-09 10:45 AM',
-        },
-        {
-            id: '2',
-            name: 'Jane Smith',
-            status: 'Successful',
-            room: 'Room 103',
-            timestamp: '2024-01-09 11:30 AM',
-        },
-        {
-            id: '3',
-            name: 'Security System',
-            status: 'Unsuccessful',
-            room: 'Room 102',
-            timestamp: '2024-01-09 11:45 AM',
-        },
+        {id: '1', name: 'John Doe', status: 'Successful', room: '101', timestamp: '2024-01-09 10:45',},
+        {id: '2', name: 'Jane Smith', status: 'Successful', room: '65', timestamp: '2024-01-09 11:30',},
+        {id: '3', name: 'Security System', status: 'Unsuccessful', room: '102', timestamp: '2024-01-09 11:45',},
+        {id: '4', name: 'John Doe', status: 'Successful', room: '101', timestamp: '2024-01-09 10:45',},
+        {id: '5', name: 'Jane Smith', status: 'Unsuccessful', room: '98', timestamp: '2024-01-09 11:30',},
+        {id: '6', name: 'Security System', status: 'Unsuccessful', room: '34', timestamp: '2024-01-09 11:45',},
     ];
     return (
         <Layout>
@@ -57,7 +42,7 @@ const Dashboard: React.FC = () => {
                 {/* User Activity Table */}
                 <div className="bg-white p-4 shadow rounded-lg">
                     <h2 className="text-lg font-semibold text-center">Recent User Activity</h2>
-                    <UserActivityTable activities={activities}/> {/* Use the reusable table component */}
+                    <UserActivityTable activities={activities}/> {/* Use the reusable activity table component */}
                 </div>
 
                 {/* Camera Events */}
