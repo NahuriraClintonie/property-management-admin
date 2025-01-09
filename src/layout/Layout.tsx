@@ -1,5 +1,6 @@
-// @ts-ignore
-const Layout = ({ any:children }) => {
+import React from "react";
+
+const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     return (
         <div className="flex h-screen bg-gray-100">
             {/* Sidebar */}
@@ -22,7 +23,7 @@ const Layout = ({ any:children }) => {
 
             {/* Main Content */}
             <main className="flex-1 p-6">
-                {children} {/* Content passed into the Layout */}
+                {children} {/* Render nested components here */}
             </main>
         </div>
     );
