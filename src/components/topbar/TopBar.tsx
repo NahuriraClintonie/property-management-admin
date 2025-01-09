@@ -21,10 +21,6 @@ const TopBar: React.FC = () => {
 
   return (
       <div className="flex items-center justify-between bg-[#0077B6] p-4 shadow-sm">
-        {/* Brand Name */}
-        <div className="text-white font-bold text-base md:text-xl flex flex-col ml-16 lg:ml-8">
-          <span className="whitespace-nowrap">PROPERTY MANAGEMENT</span>
-        </div>
 
         {/* User Dropdown */}
         <div className="relative flex items-center space-x-2 md:space-x-4">
