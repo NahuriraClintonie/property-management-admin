@@ -56,12 +56,12 @@ const Dashboard: React.FC = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 mt-8">
                 {/* User Activity Table */}
                 <div className="bg-white p-4 shadow rounded-lg">
-                    <h2 className="text-lg font-semibold">Recent User Activity</h2>
-                    <UserActivityTable activities={activities} /> {/* Use the reusable table component */}
+                    <h2 className="text-lg font-semibold text-center">Recent User Activity</h2>
+                    <UserActivityTable activities={activities}/> {/* Use the reusable table component */}
                 </div>
 
                 {/* Camera Events */}
-                <div className="bg-white p-4 shadow rounded-lg">
+                <div className="bg-white p-2 shadow rounded-lg">
                     <h2 className="text-lg font-semibold">Recent Camera Events</h2>
                     <ul className="mt-2 text-gray-600 space-y-2">
                         <li>Motion detected in Room 101 at 10:45 AM</li>
