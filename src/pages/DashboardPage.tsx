@@ -1,6 +1,7 @@
 import React from "react";
 import TopBar from "../components/topbar/TopBar"; // Import the TopBar component
 import NavBar from "../components/sidebar/NavBar"; // Import the NavBar component
+import Layout from './Layout';
 
 const DashboardPage: React.FC = () => {
     return (
@@ -14,9 +15,23 @@ const DashboardPage: React.FC = () => {
                 <NavBar />
 
                 {/* Dashboard Content */}
-                <div className="flex-grow p-6 bg-gray-100">
-                    <h1 className="text-4xl font-bold">Welcome to the Dashboard</h1>
-                </div>
+                <Layout>
+                    <h1 className="text-2xl font-bold mb-4">Dashboard</h1>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <div className="bg-white p-4 shadow rounded-lg">
+                            <h2 className="text-lg font-semibold">Active Devices</h2>
+                            <p className="mt-2 text-gray-600">10 devices active</p>
+                        </div>
+                        <div className="bg-white p-4 shadow rounded-lg">
+                            <h2 className="text-lg font-semibold">Events</h2>
+                            <p className="mt-2 text-gray-600">5 events recorded today</p>
+                        </div>
+                        <div className="bg-white p-4 shadow rounded-lg">
+                            <h2 className="text-lg font-semibold">Alerts</h2>
+                            <p className="mt-2 text-gray-600">2 unresolved alerts</p>
+                        </div>
+                    </div>
+                </Layout>
             </div>
         </div>
     );
