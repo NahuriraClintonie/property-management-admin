@@ -16,8 +16,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
             <aside
                 className={`h-full bg-[#0077B6] text-white transition-all duration-300 ${
                     isSidebarCollapsed ? "w-16" : "w-64"
-                }`}
-            >
+                }`}>
                 <NavBar isCollapsed={isSidebarCollapsed} />
             </aside>
 
@@ -28,8 +27,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
                     {/* Sidebar Toggle Button */}
                     <button
                         onClick={toggleSidebar}
-                        className="text-[#0077B6] hover:bg-gray-200 rounded p-2 focus:outline-none"
-                    >
+                        className="text-[#0077B6] hover:bg-gray-200 rounded p-2 focus:outline-none">
                         <FiMenu size={24} />
                     </button>
                     <TopBar />
