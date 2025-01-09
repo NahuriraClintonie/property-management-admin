@@ -2,11 +2,36 @@ import React from 'react';
 import Layout from '../components/layout/Layout'; // Assuming Layout is a wrapper component
 import { FaBell, FaCamera, FaLightbulb, FaCogs } from 'react-icons/fa';
 import DashboardCard from '../components/cards/DashboardCard'; // Import the reusable DashboardCard component
+import UserActivityTable from '../components/tables/UserActivityTable'; // Import the reusable component
 
 const Dashboard: React.FC = () => {
+
+    // Example data
+    const activities = [
+        {
+            id: '1',
+            name: 'John Doe',
+            status: 'Successful',
+            room: 'Room 101',
+            timestamp: '2024-01-09 10:45 AM',
+        },
+        {
+            id: '2',
+            name: 'Jane Smith',
+            status: 'Successful',
+            room: 'Room 103',
+            timestamp: '2024-01-09 11:30 AM',
+        },
+        {
+            id: '3',
+            name: 'Security System',
+            status: 'Unsuccessful',
+            room: 'Room 102',
+            timestamp: '2024-01-09 11:45 AM',
+        },
+    ];
     return (
         <Layout>
-            <h1 className="text-2xl font-bold mb-4">Dashboard</h1>
 
             {/* Overview Section */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -29,14 +54,10 @@ const Dashboard: React.FC = () => {
 
             {/* Activity & Security Overview */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 mt-8">
-                {/* User Activity */}
+                {/* User Activity Table */}
                 <div className="bg-white p-4 shadow rounded-lg">
                     <h2 className="text-lg font-semibold">Recent User Activity</h2>
-                    <ul className="mt-2 text-gray-600 space-y-2">
-                        <li>User John Doe accessed Room 101 (Face Authenticated)</li>
-                        <li>Security breach detected in Room 102 (unauthorized access attempt)</li>
-                        <li>User Jane Smith accessed Room 103 (Face Authenticated)</li>
-                    </ul>
+                    <UserActivityTable activities={activities} /> {/* Use the reusable table component */}
                 </div>
 
                 {/* Camera Events */}
