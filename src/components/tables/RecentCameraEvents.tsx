@@ -1,60 +1,57 @@
 import React, { useState } from 'react';
 
-interface UserActivity {
+interface RecentEvent {
     id: string;
-    name: string;
-    status: string;
-    room: string;
-    timestamp: string;
+    location: string;
+    time: string;
 }
 
-interface UserActivityTableProps {
-    activities: UserActivity[];
+interface RecentCameraEventsProps {
+    events: RecentEvent[];
 }
 
-const UserActivityTable: React.FC<UserActivityTableProps> = ({ activities }) => {
+const RecentCameraEvents: React.FC<RecentCameraEventsProps> = ({ events }) => {
     const [currentPage, setCurrentPage] = useState(1);
     const recordsPerPage = 5;
 
     // Calculate the index of the first and last activity to display
-    const indexOfLastActivity = currentPage * recordsPerPage;
-    const indexOfFirstActivity = indexOfLastActivity - recordsPerPage;
-    const currentActivities = activities.slice(indexOfFirstActivity, indexOfLastActivity);
+    const indexOfLastEvent = currentPage * recordsPerPage;
+    const indexOfFirstEvent = indexOfLastEvent - recordsPerPage;
+    const currentEvents = events.slice(indexOfFirstEvent, indexOfLastEvent);
 
     // Handle page change
     const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
 
     // Calculate total pages
-    const totalPages = Math.ceil(activities.length / recordsPerPage);
+    const totalPages = Math.ceil(events.length / recordsPerPage);
 
     return (
-        <div className="overflow-x-auto mt-4">
+        <div className="bg-white p-4">
             <table className="min-w-full table-auto border-collapse">
                 <thead className="bg-[#0077B6]">
                 <tr>
-                    <th className="px-4 py-2 text-left text-white">Name</th>
-                    <th className="px-4 py-2 text-left text-white">Status</th>
-                    <th className="px-4 py-2 text-left text-white">Room</th>
-                    <th className="px-4 py-2 text-left text-white">Timestamp</th>
+                    <th className="px-4 py-2 text-left text-white">Location</th>
+                    <th className="px-4 py-2 text-left text-white">Time</th>
                 </tr>
                 </thead>
                 <tbody>
-                {currentActivities.map((activity) => (
-                    <tr key={activity.id} className="border-b border-black">
-                        <td className="px-4 py-1 text-gray-600">{activity.name}</td>
-                        <td
-                            className={`px-4 py-1 ${
-                                activity.status === 'Successful' ? 'text-green-600' : 'text-red-600'
-                            }`}
-                        >
-                            {activity.status}
+                {currentEvents.length > 0 ? (
+                    currentEvents.map((event) => (
+                        <tr key={event.id} className="border-b border-black">
+                            <td className="px-4 py-1 text-gray-600">{event.location}</td>
+                            <td className="px-4 py-1 text-gray-600">{event.time}</td>
+                        </tr>
+                    ))
+                ) : (
+                    <tr>
+                        <td colSpan={2} className="px-4 py-2 text-center text-gray-500">
+                            No recent events available.
                         </td>
-                        <td className="px-4 py-1 text-gray-600">{activity.room}</td>
-                        <td className="px-4 py-1 text-gray-600">{activity.timestamp}</td>
                     </tr>
-                ))}
+                )}
                 </tbody>
             </table>
+
             {/* Pagination Controls */}
             <div className="flex justify-center mt-4">
                 <button
@@ -88,4 +85,4 @@ const UserActivityTable: React.FC<UserActivityTableProps> = ({ activities }) => 
     );
 };
 
-export default UserActivityTable;
+export default RecentCameraEvents;
