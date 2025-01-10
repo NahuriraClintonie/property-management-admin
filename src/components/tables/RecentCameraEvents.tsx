@@ -14,18 +14,16 @@ const RecentCameraEvents: React.FC<RecentCameraEventsProps> = ({ events }) => {
     const [currentPage, setCurrentPage] = useState(1);
     const recordsPerPage = 5;
 
-    // Calculate the index of the first and last activity to display
-    // const indexOfLastActivity = currentPage * recordsPerPage;
-    // const indexOfFirstActivity = indexOfLastActivity - recordsPerPage;
-    // const currentEvents = events.slice(indexOfFirstActivity, indexOfLastActivity);
+    const indexOfLastEvent = currentPage * recordsPerPage;
+    const indexOfFirstEvent = indexOfLastEvent - recordsPerPage;
+    const currentEvents = events.slice(indexOfFirstEvent, indexOfLastEvent);
 
-    // Handle page change
     const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
 
-    // Calculate total pages
     const totalPages = Math.ceil(events.length / recordsPerPage);
+
     return (
-        <div className="bg-white p-4 shadow rounded-lg mt-4">
+        <div className="overflow-x-auto mt-4">
             <table className="min-w-full table-auto border-collapse">
                 <thead className="bg-[#0077B6]">
                 <tr>
@@ -34,8 +32,8 @@ const RecentCameraEvents: React.FC<RecentCameraEventsProps> = ({ events }) => {
                 </tr>
                 </thead>
                 <tbody>
-                {events.length > 0 ? (
-                    events.map((event) => (
+                {currentEvents.length > 0 ? (
+                    currentEvents.map((event) => (
                         <tr key={event.id} className="border-b border-black">
                             <td className="px-4 py-1 text-gray-600">{event.location}</td>
                             <td className="px-4 py-1 text-gray-600">{event.time}</td>
@@ -59,7 +57,6 @@ const RecentCameraEvents: React.FC<RecentCameraEventsProps> = ({ events }) => {
                 >
                     Prev
                 </button>
-                {/* Page Number Buttons */}
                 {Array.from({ length: totalPages }, (_, index) => (
                     <button
                         key={index + 1}

@@ -22,6 +22,8 @@ const Dashboard: React.FC = () => {
         { id: '1', location: 'Room 101', time: '10:45 AM' },
         { id: '2', location: 'Room 102', time: '11:15 AM' },
         { id: '3', location: 'Entrance', time: '12:30 PM' },
+        { id: '4', location: 'Room 21', time: '12:30 PM' },
+        { id: '5', location: 'Store', time: '00:30 PM' },
     ];
     return (
         <Layout>
