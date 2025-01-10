@@ -24,6 +24,7 @@ const Dashboard: React.FC = () => {
         { id: '3', location: 'Entrance', time: '12:30 PM' },
         { id: '4', location: 'Room 21', time: '12:30 PM' },
         { id: '5', location: 'Store', time: '00:30 PM' },
+        { id: '6', location: 'Janitors', time: '00:30 PM' },
     ];
     return (
         <Layout>
@@ -56,7 +57,7 @@ const Dashboard: React.FC = () => {
                 </div>
 
                 {/* Camera Events */}
-                <div className="bg-white p-2 shadow rounded-lg">
+                <div className="bg-white p-4 shadow rounded-lg">
                     <h2 className="text-lg font-semibold text-center">Recent Camera Events</h2>
                     {/* Recent Camera Events */}
                     <RecentCameraEvents events={recentEvents} />

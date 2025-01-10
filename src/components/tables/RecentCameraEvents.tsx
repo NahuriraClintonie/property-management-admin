@@ -14,16 +14,19 @@ const RecentCameraEvents: React.FC<RecentCameraEventsProps> = ({ events }) => {
     const [currentPage, setCurrentPage] = useState(1);
     const recordsPerPage = 5;
 
+    // Calculate the index of the first and last activity to display
     const indexOfLastEvent = currentPage * recordsPerPage;
     const indexOfFirstEvent = indexOfLastEvent - recordsPerPage;
     const currentEvents = events.slice(indexOfFirstEvent, indexOfLastEvent);
 
+    // Handle page change
     const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
 
+    // Calculate total pages
     const totalPages = Math.ceil(events.length / recordsPerPage);
 
     return (
-        <div className="overflow-x-auto mt-4">
+        <div className="bg-white p-4">
             <table className="min-w-full table-auto border-collapse">
                 <thead className="bg-[#0077B6]">
                 <tr>
@@ -48,6 +51,7 @@ const RecentCameraEvents: React.FC<RecentCameraEventsProps> = ({ events }) => {
                 )}
                 </tbody>
             </table>
+
             {/* Pagination Controls */}
             <div className="flex justify-center mt-4">
                 <button
@@ -57,6 +61,7 @@ const RecentCameraEvents: React.FC<RecentCameraEventsProps> = ({ events }) => {
                 >
                     Prev
                 </button>
+                {/* Page Number Buttons */}
                 {Array.from({ length: totalPages }, (_, index) => (
                     <button
                         key={index + 1}
